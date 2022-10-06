@@ -72,4 +72,3 @@ if [ $? -eq 0 ]; then
 else
  echo Status = FAILURE
 fi
-
