@@ -28,15 +28,15 @@ cd /home/roboshop/catalogue
 
 echo "Installing NodeJS Dependencies"
 npm install &>>${LOG_FILE}
-echo Status =$?
+echo Status = $?
 
 echo "Setup Catalogue Service"
 mv /home/roboshop/catalogue/systemd.service /etc/systemd/system/catalogue.service &>>${LOG_FILE}
-echo Status =$?
+echo Status = $?
 
 systemctl daemon-reload &>>${LOG_FILE}
 systemctl enable catalogue &>>${LOG_FILE}
 
 echo "Start  Catalogue Service"
 systemctl start catalogue &>>${LOG_FILE}
-echo Status =$?
+echo Status = $?
