@@ -26,4 +26,4 @@ mv frontend-main/localhost.conf /etc/nginx/default.d/roboshop.conf &>>$LOG_FILE
 echo Starting Nginx Service
 systemctl enable nginx &>>$LOG_FILE
 systemctl restart nginx &>>$LOG_FILE
-echo status = $?
+StatusCheck $?
