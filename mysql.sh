@@ -43,7 +43,7 @@ StatusCheck $?
 
 echo "Extract Schema"
 cd /tmp
-unzip -o mysql.zip &>>$LOG_FILE
+unzip mysql.zip &>>$LOG_FILE
 StatusCheck $?
 
 echo "Load Schema"
