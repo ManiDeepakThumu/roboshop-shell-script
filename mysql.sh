@@ -23,11 +23,15 @@ DEFAULT_PASSWORD=$(grep 'A temporary password' /var/log/mysqld.log | awk '{print
 echo "SET PASSWORD FOR 'root'@localhost' = PASSWORD('ROBOSHOP_MYSQL_PASSWORD');
 FLUSH PRIVILEGES;" >/tmp/root-pass.sql
 
+echo "Change the default root password"
+mysql -uroot -p"${DEFAULT_PASSWORD}" </tmp/root-pass.sql &>>$LOG_FILE
+StatusCheck $?
+
 # mysql_secure_installation
 
 # mysql -uroot -pRoboshop@1
 
-> uninstall plugin validate_password;
+
 
 # curl -s -L -o /tmp/mysql.zip "https://github.com/roboshop-devops-project/mysql/archive/main.zip"
 
