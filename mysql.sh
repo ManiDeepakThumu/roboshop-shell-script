@@ -18,10 +18,10 @@ systemctl enable mysqld &>>$LOG_FILE
 systemctl restart mysqld &>>$LOG_FILE
 StatusCheck $?
 
-DEFAULT_PASSWORD=$(grep 'A temporary password' /var/log/mysql.log | awk '{print $NF}')
+DEFAULT_PASSWORD=$(grep 'A temporary password' /var/log/mysqld.log | awk '{print $NF}')
 
 echo "SET PASSWORD FOR 'root'@localhost' = PASSWORD('mypass');
-FLUSH PRIVILEGES;"
+FLUSH PRIVILEGES;" >/tmp/root-pass.sql
 
 # mysql_secure_installation
 
