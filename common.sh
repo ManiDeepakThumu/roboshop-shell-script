@@ -56,7 +56,7 @@ NODEJS() {
   StatusCheck $?
 
   echo "Setup ${COMPONENT} Service"
-  mv /home/roboshop/user/systemd.service /etc/systemd/system/${COMPONENT}.service &>>${LOG_FILE}
+  mv /home/roboshop/${COMPONENT}/systemd.service /etc/systemd/system/${COMPONENT}.service &>>${LOG_FILE}
   StatusCheck $?
 
   systemctl daemon-reload &>>${LOG_FILE}
