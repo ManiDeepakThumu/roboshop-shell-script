@@ -31,7 +31,7 @@ echo "Extract User Application Code"
 unzip /tmp/user.zip &>>${LOG_FILE}
 StatusCheck $?
 
-mv user-main catauserlogue
+mv user-main user
 
 cd /home/roboshop/user
 
