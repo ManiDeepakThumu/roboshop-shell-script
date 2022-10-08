@@ -15,7 +15,7 @@ StatusCheck () {
 
 APP_PREREQ() {
   id roboshop &>>${LOG_FILE}
-  if [ if $? -ne 0 ]; then
+  if [ $? -ne 0 ]; then
    echo "Add RoboShop Application User"
    useradd roboshop &>>${LOG_FILE}
    StatusCheck $?
@@ -37,7 +37,7 @@ APP_PREREQ() {
 
   mv ${COMPONENT}-main ${COMPONENT}
 
-  cd /home/roboshop-shell-scrip/${COMPONENT}
+  cd /home/roboshop/${COMPONENT}
 }
 
 SYSTEMD_SETUP() {
@@ -97,9 +97,9 @@ PYTHON() {
 
   APP_PREREQ
 
+  cd /home/roboshop/${COMPONENT}
 
-
-  echo "Install Python Dependencies for APP"
+  echo "Install Python Dependencies for APP``"
   pip3 install -r requirements.txt &>>${LOG_FILE}
   StatusCheck $?
 }
