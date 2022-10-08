@@ -37,7 +37,7 @@ APP_PREREQ() {
 
   mv ${COMPONENT}-main ${COMPONENT}
 
-  cd /home/roboshop/${COMPONENT}
+  cd /home/roboshop-shell-scrip/${COMPONENT}
 }
 
 SYSTEMD_SETUP() {
@@ -97,7 +97,7 @@ PYTHON() {
 
   APP_PREREQ
 
-  cd /home/roboshop/${COMPONENT}
+
 
   echo "Install Python Dependencies for APP"
   pip3 install -r requirements.txt &>>${LOG_FILE}
