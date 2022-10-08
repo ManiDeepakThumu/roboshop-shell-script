@@ -21,8 +21,10 @@ systemctl restart rabbitmq-server &>>$LOG_FILE
 StatusCheck $?
 
 echo "Add Application User in RabbitMQ"
-rabbitmqctl add_user roboshop roboshop123 &>>$LOG_FILE
-StatusCheck $?
+if [ $? -ne 0 ]; then
+  rabbitmqctl add_user roboshop roboshop123 &>>$LOG_FILE
+  StatusCheck $?
+fi
 
 rabbitmqctl list_users | grep roboshop &>>$LOG_FILE
 if [ $? -ne 0 ]; then
