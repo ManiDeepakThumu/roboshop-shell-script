@@ -37,7 +37,7 @@ APP_PREREQ() {
 
   mv ${COMPONENT}-main ${COMPONENT}
 
-  cd /home/roboshop/${COMPONENT}
+
 }
 
 SYSTEMD_SETUP() {
