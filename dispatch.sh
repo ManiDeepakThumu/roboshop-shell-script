@@ -20,8 +20,8 @@ StatusCheck $?
 echo "Extract Application Code"
 if [ $? -ne 0 ]; then
  unzip /tmp/dispatch.zip &>>${LOG_FILE}
- StatusCheck $?
 fi
+StatusCheck $?
 
 mv dispatch-main dispatch &>>${LOG_FILE}
 
