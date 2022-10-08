@@ -45,6 +45,6 @@ sed -i -e 's/AMQPHOST/rabbitmq.roboshop.internal/'
 StatusCheck $?
 
 echo "Start Service"
-systemctl restart dispatch &>>${LOG_FILE}
+systemctl start dispatch &>>${LOG_FILE}
 StatusCheck $?
 
