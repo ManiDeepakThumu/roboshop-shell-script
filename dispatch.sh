@@ -39,8 +39,8 @@ mv /home/roboshop/dispatch/systemd.service /etc/systemd/system/dispatch.service 
 systemctl daemon-reload &>>${LOG_FILE}
 systemctl enable dispatch &>>${LOG_FILE}
 
-echo "Update Systemd"
-sed -i -e 's/DISPATCH/dispatch.roboshop.internal /home/roboshop/dispatch/systemd.service &>>${LOG_FILE}
+echo "Update Systemd Service file"
+sed -i -e 's/AMQPHOST/rabbitmq.roboshop.internal/' /home/roboshop/dispatch/systemd.service &>>${LOG_FILE}
 StatusCheck $?
 
 echo "Start Service"
