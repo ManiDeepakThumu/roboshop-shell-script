@@ -1,4 +1,4 @@
- LOG_FILE=/tmp/frontend
+LOG_FILE=/tmp/frontend
 
 source common.sh
 
