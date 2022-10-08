@@ -22,8 +22,8 @@ StatusCheck $?
 
 echo "Add Application User in RabbitMQ"
 if [ $? -ne 0 ]; then
-  rabbitmqctl add_user roboshop roboshop123 &>>$LOG_FILE
-  StatusCheck $?
+ rabbitmqctl add_user roboshop roboshop123 &>>$LOG_FILE
+ StatusCheck $?
 fi
 
 rabbitmqctl list_users | grep roboshop &>>$LOG_FILE
