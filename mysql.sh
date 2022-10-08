@@ -53,5 +53,5 @@ StatusCheck $?
 
 echo "Load Schema"
 cd mysql-main
-mysql -u root -p${ROBOSHOP_MYSQL_PASSWORD} <shipping.sql &>>$LOG_FILE
+mysql -u root -pRoboShop@1 <shipping.sql &>>$LOG_FILE
 StatusCheck $?
