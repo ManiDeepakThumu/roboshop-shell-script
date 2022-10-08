@@ -38,7 +38,7 @@ systemctl daemon-reload &>>${LOG_FILE}
 systemctl enable dispatch &>>${LOG_FILE}
 
 ehco "Update Systemd"
-SYSTEMD_SETUP &>>${LOG_FILE}
+SYSTEMD_SETUP ${COMPONENT} &>>${LOG_FILE}
 StatusCheck $?
 
 echo "Start Service"
