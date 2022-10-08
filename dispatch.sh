@@ -25,7 +25,7 @@ mv dispatch-main dispatch &>>${LOG_FILE}
 
 cd dispatch
 
-echo " Get & Download Dependencies"
+echo "Get & Download Dependencies"
 go mod init dispatch &>>${LOG_FILE}
 go get &>>${LOG_FILE}
 go build &>>${LOG_FILE}
@@ -38,6 +38,6 @@ systemctl daemon-reload &>>${LOG_FILE}
 systemctl enable dispatch &>>${LOG_FILE}
 
 echo "Start Service"
-systemctl start dispatch &>>${LOG_FILE}
+systemctl restart dispatch &>>${LOG_FILE}
 StatusCheck $?
 
