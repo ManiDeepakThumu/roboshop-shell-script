@@ -40,7 +40,7 @@ systemctl daemon-reload &>>${LOG_FILE}
 systemctl enable dispatch &>>${LOG_FILE}
 
 echo "Update Systemd"
-SYSTEMD_SETUP ${COMPONENT} &>>${LOG_FILE}
+sed -i -e 's/DISPATCH/dispatch.roboshop.internal /home/roboshop/dispatch/systemd.service &>>${LOG_FILE}
 StatusCheck $?
 
 echo "Start Service"
