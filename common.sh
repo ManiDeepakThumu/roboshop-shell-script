@@ -97,8 +97,6 @@ PYTHON() {
 
   APP_PREREQ
 
-  cd /home/roboshop/${COMPONENT}
-
   echo "Install Python Dependencies for APP"
   pip3 install -r requirements.txt &>>${LOG_FILE}
   StatusCheck $?
