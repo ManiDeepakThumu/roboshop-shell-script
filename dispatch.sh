@@ -18,8 +18,10 @@ curl -L -s -o /tmp/dispatch.zip https://github.com/roboshop-devops-project/dispa
 StatusCheck $?
 
 echo "Extract Application Code"
-unzip /tmp/dispatch.zip &>>${LOG_FILE}
-StatusCheck $?
+if [ $? -ne 0 ]; then
+ unzip /tmp/dispatch.zip &>>${LOG_FILE}
+ StatusCheck $?
+fi
 
 mv dispatch-main dispatch &>>${LOG_FILE}
 
